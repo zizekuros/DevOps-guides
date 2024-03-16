@@ -1,0 +1,37 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: {cluster-name}  # Change this to your desired cluster name
+  region: {region}  # Change this to the AWS region where you want to deploy the cluster, i.e. eu-central-1
+  version: "1.28"  # Change this to the desired EKS version
+
+iam:
+  withOIDC: true
+
+addons:
+- name: vpc-cni
+  attachPolicyARNs:
+    - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy  # You may adjust or add policies here
+  resolveConflicts: overwrite
+
+managedNodeGroups:
+  - name: {nodegroup-name}  # Change this to your desired node group name
+    instanceType: t3.medium  # Change this to the desired instance type for your nodes
+    volumeSize: 100  # Change this to the desired volume size for node storage
+    minSize: 2  # Change this to the minimum number of nodes in the node group
+    maxSize: 20  # Change this to the maximum number of nodes in the node group
+    desiredCapacity: 2  # Change this to the desired number of nodes to deploy initially
+    spot: false  # Set to true if you want to use spot instances for cost optimization
+    ssh: 
+      allow: false  # Set to true if you want to allow SSH access to the nodes
+    iam:
+      attachPolicyARNs:
+        - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+        - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+        - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+        - arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess
+      withAddonPolicies:
+        efs: false  # Set to true if you want to enable EFS support
+    tags:
+      Name: {nodegroup-name}  # Change this to your desired node group name

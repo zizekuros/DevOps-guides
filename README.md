@@ -7,4 +7,4 @@ Sharing is caring. ❤️ Feel free to share it with anyone who might benefit fr
 ## 📚 Guidelines / tutorials
 
 - [How to Build & Push the image to Amazon ECR (Elastic Container Registry)](ecr/build-and-push-to-ecr.md)
-
+- [How to set up Kubernetes cluster in Amazon EKS (Elastic Kubernetes Service)](eks/setup-cluster-eks.md)
