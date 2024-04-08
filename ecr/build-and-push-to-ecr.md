@@ -3,9 +3,10 @@
 These instructions will help you to create an ECR repository first. Then you are going to build the docker image and push it to ECR.
 
 ## Prerequisites:
-1. Install AWS CLI
-2. Configure AWS CLI (set up credentials)
-3. Grant your user the permission to manage create & push to ECR repository
+1. Install Docker
+2. Install AWS CLI
+3. Configure AWS CLI (set up credentials)
+4. Grant your user the permission to manage create & push to ECR repository
 
 ## Push the image to Amazon ECR by doing following steps:
 

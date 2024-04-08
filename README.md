@@ -9,6 +9,7 @@ Sharing is caring. ❤️ Feel free to share it with anyone who might benefit fr
 ## 📚 Guidelines / tutorials
 
 - [How to Build & Push the image to Amazon ECR](ecr/build-and-push-to-ecr.md)
+- [How to Build & Push the image to Github Container Registry (ghcr.io)](github/push-to-ghcr.md)
 - [Set up Kubernetes cluster in Amazon EKS](eks/setup-cluster-eks.md)
 - [Install AWS Load Balancer Controller](eks/aws-load-balancer-controller.md)
 - [How to enable IAM user/role to access EKS cluster](eks/iam-access-cluster.md)
